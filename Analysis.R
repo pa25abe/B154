@@ -33,3 +33,22 @@ hist(
   border = "black"
 )
 
+if (!dir.exists("figures")) {
+  dir.create("figures")
+}
+
+png("figures/my_plot.png", width = 1200, height = 900)
+
+# Re-run your scatter plot code
+plot(data$Total.Test.takers, data$Total.Math,
+     main = "Relationship Between Total Test-takers and Total Math Score",
+     xlab = "Total Test-takers (number of students)",
+     ylab = "Total Math Score (points)",
+     pch = 19)
+
+abline(lm(Total.Math ~ Total.Test.takers, data = data), lwd = 2)
+
+dev.off()
+
+
+
