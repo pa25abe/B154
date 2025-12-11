@@ -33,13 +33,15 @@ hist(
   border = "black"
 )
 
+# Create folder "figures" if it doesn't exist
 if (!dir.exists("figures")) {
   dir.create("figures")
 }
 
+# Save the plot as PNG
 png("figures/my_plot.png", width = 1200, height = 900)
 
-# Re-run your scatter plot code
+# Re-run your plot code here
 plot(data$Total.Test.takers, data$Total.Math,
      main = "Relationship Between Total Test-takers and Total Math Score",
      xlab = "Total Test-takers (number of students)",
@@ -49,6 +51,5 @@ plot(data$Total.Test.takers, data$Total.Math,
 abline(lm(Total.Math ~ Total.Test.takers, data = data), lwd = 2)
 
 dev.off()
-
 
 
