@@ -4,20 +4,17 @@ data <- read.csv("school_scores.csv")
 # =====
 # Plot.
 # =====
-plot(
-  data$Total.Test.takers, 
-  data$Total.Math,
-  main = "Relationship Between Total Test-takers and Total Math Score",
-  xlab = "Total Test-takers (number of students)",
-  ylab = "Total Math Score (points)",
-  pch = 19,
-  col = "blue"
+plot(data$Total.Test.takers, data$Total.Math,
+     main = "Relationship Between Total Test-takers and Total Math Score",
+     xlab = "Total Test-takers (number of students)",
+     ylab = "Total Math Score (points)",
+     pch = 19, col = "blue",
+     ylim = c(300, 700),          
+     yaxt = "n"                        
 )
+axis(side = 2, at = seq(300, 700, by = 50))
 
-# Add regression line
-abline(lm(Total.Math ~ Total.Test.takers, data = data),
-       col = "red",
-       lwd = 2)
+abline(lm(Total.Math ~ Total.Test.takers, data = data), col = "red", lwd = 2)
 
 # Save the plot as PNG
 png("figures/my_plot.png", width = 1200, height = 900)
