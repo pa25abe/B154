@@ -9,12 +9,11 @@ plot(data$Total.Test.takers, data$Total.Math,
      xlab = "Total Test-takers (number of students)",
      ylab = "Total Math Score (points)",
      pch = 19, col = "blue",
-     ylim = c(300, 700),          
-     yaxt = "n"                        
-)
-axis(side = 2, at = seq(300, 700, by = 50))
+     ylim = c(350, 650),
+     yaxt = "n")
 
-abline(lm(Total.Math ~ Total.Test.takers, data = data), col = "red", lwd = 2)
+axis(side = 2, at = seq(300, 700, by = 50))
+abline(lm(Total.Math ~ Total.Test.takers, data = data), col = "red", lwd = 2)
 
 # Save the plot as PNG
 png("figures/my_plot.png", width = 1200, height = 900)
@@ -80,7 +79,7 @@ hist(
   xaxp = c(350, 650, 6)
 )
 
-#Closing Opened File.
+#Closing Opened Image Files.
 dev.off()
 
 cat("Histogram saved to figures/histogram_math.png\n")
@@ -88,6 +87,9 @@ cat("Histogram saved to figures/histogram_math.png\n")
 # ==================
 # Summary Statistics
 # ==================
+
+# Creating the regression model
+model <- lm(Total.Math ~ Total.Test.takers, data = data)
 
 cat("\n--- Summary Statistics ---\n")
 cat("Mean Math Score:", round(mean(data$Total.Math), 2), "\n")
