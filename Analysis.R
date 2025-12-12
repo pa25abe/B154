@@ -12,7 +12,8 @@ plot(data$Total.Test.takers, data$Total.Math,
      ylim = c(350, 650),
      yaxt = "n")
 
-axis(side = 2, at = seq(300, 700, by = 50))
+axis(side = 2, at = seq(350, 650, by = 50))
+
 abline(lm(Total.Math ~ Total.Test.takers, data = data), col = "red", lwd = 2)
 
 # Save the plot as PNG
@@ -28,7 +29,9 @@ plot(data$Total.Test.takers, data$Total.Math,
 abline(lm(Total.Math ~ Total.Test.takers, data = data), lwd = 2)
 
 dev.off()
-
+cat("\n---------------------------------------------\n")
+cat("Plot saved to figures/my_plot.png\n")
+cat("---------------------------------------------\n")
 
 # =========================
 # Histogram of Math Scores.
@@ -36,8 +39,6 @@ dev.off()
 
 min_score <- min(data$Total.Math)
 max_score <- max(data$Total.Math)
-
-cat("\nMath Score Range:", round(min_score, 2), "to", round(max_score, 2), "\n")
 
 # X-axis range 350 - 650.
 xlim_lower <- 350
@@ -48,9 +49,6 @@ max_freq <- max(h$counts)
 
 # 15% padding for Y axis to have some space over the histogram max.
 ylim_upper <- ceiling(max_freq * 1.15)
-
-cat("X-axis limits:", xlim_lower, "to", xlim_upper, "(steps of 50)\n")
-cat("Y-axis limits: 0 to", ylim_upper, "\n\n")
 
 # Plotting Histogram.
 hist(
@@ -83,6 +81,7 @@ hist(
 dev.off()
 
 cat("Histogram saved to figures/histogram_math.png\n")
+cat("---------------------------------------------\n")
 
 # ==================
 # Summary Statistics
@@ -91,7 +90,7 @@ cat("Histogram saved to figures/histogram_math.png\n")
 # Creating the regression model
 model <- lm(Total.Math ~ Total.Test.takers, data = data)
 
-cat("\n--- Summary Statistics ---\n")
+cat("--- Summary Statistics ---\n")
 cat("Mean Math Score:", round(mean(data$Total.Math), 2), "\n")
 cat("Regression:", round(summary(model)$r.squared, 4), "\n")
 
