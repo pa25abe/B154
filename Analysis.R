@@ -1,4 +1,4 @@
-# 
+# Load Data
 data <- read.csv("school_scores.csv")
 
 # =====
