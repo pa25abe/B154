@@ -1,5 +1,5 @@
 # Load data
-data <- read.csv("/Users/hadimac/Documents/Group Project/B154/school_scores.csv")
+data <- read.csv("/Users/hadimac/Documents/Group_Project/B154/school_scores.csv")
 
 
 plot(
