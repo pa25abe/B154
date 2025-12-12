@@ -9,17 +9,17 @@ plot(data$Total.Test.takers, data$Total.Math,
      xlab = "Total Test-takers (number of students)",
      ylab = "Total Math Score (points)",
      pch = 19, col = "blue",
-     ylim = c(400, 600),
-     xlim = c(20000, 100000), 
+     ylim = c(400, 650),
+     xlim = c(20000, 250000),
      yaxt = "n",
      xaxt = "n"
 )
 
-axis(side = 2, at = seq(400, 600, by = 50))
+axis(side = 2, at = seq(400, 650, by = 50))
 
 axis(side = 1,
-     at = c(20000, 40000, 60000, 80000, 100000),
-     labels = c("20k", "40k", "60k", "80k", "100k")
+     at = c(20000, 40000, 60000, 80000, 100000, 120000, 140000, 160000, 180000, 200000, 220000, 240000),
+     labels = c("20k", "40k", "60k", "80k", "100k", "120k", "140k", "160k", "180k", "200k", "220k", "240k")
 )
 
 # Regression line
