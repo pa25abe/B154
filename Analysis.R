@@ -84,7 +84,7 @@ cat("Histogram saved to figures/histogram_math.png\n")
 cat("---------------------------------------------\n")
 
 # ==================
-# 
+# Summary Statistics
 # ==================
 
 # Creating the regression model
