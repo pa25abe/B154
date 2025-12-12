@@ -2,5 +2,8 @@
 #school_scores analysis
 
 #contributor
--Sohaib Ashraf
-
+- Sohaib Ashraf
+- Pprathmesh Anande
+- Kamalesh Ayyannan
+- Roshan Maddala
+- Tarun Bandreddi
